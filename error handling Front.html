@@ -1,0 +1,57 @@
+
+  <thead>
+    <form  name= "theForm">
+
+  <input id="txtFName" type="text"
+   placeholder="First Name" />
+
+   <input id="txtLName" type= "text"
+   placeholder="Last Name" />
+
+</form>
+<script>
+var person= {
+  fName:"",
+  lName:"",
+
+}
+
+function validateForm()  {
+
+var fName= document.forms["theForm"]["txtFName"];
+var lName= document.forms["theForm"]["txtLName"]
+
+var reC = (/^[a-zA-Z]+$/);
+
+if (fName.value=="" || !(fName.value.match(reC))) {
+  window.alert("Enter Valid First Name")
+  break;
+}
+if (lName.value=="" || !(lName.value.match(reC))) {
+  window.alert("Enter Valid Last Name")
+  break;
+
+}
+
+
+return true;
+}
+
+function addPerson() {
+
+ if ( validateForm()==true)
+ {
+ person.fName = document.getElementById('txtFName').value;
+ person.lName =  document.getElementById('txtLName').value;
+
+
+ document.write(person.fName," ", person.lName, " ");
+}
+
+
+}
+</script>
+
+<body>
+  <br>
+<button type= "button" Value="" onclick="addPerson()"> Submit
